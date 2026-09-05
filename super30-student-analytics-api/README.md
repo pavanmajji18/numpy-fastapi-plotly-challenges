@@ -1,17 +1,4 @@
-```markdown
-<div align="center">
-
 # Super30 Student Analytics Engine
-
-**A vectorized academic intelligence system and interactive analytics dashboard built on FastAPI, NumPy, and Plotly.**
-
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](#)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?logo=fastapi&logoColor=white)](#)
-[![NumPy](https://img.shields.io/badge/NumPy-Vectorized-013243?logo=numpy&logoColor=white)](#)
-[![Plotly](https://img.shields.io/badge/Plotly-Interactive%20Charts-3F4F75?logo=plotly&logoColor=white)](#)
-[![Code Style](https://img.shields.io/badge/Code%20Style-Black-000000)](#)
-
-</div>
 
 ---
 
