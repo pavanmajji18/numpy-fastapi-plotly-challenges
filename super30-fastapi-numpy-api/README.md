@@ -13,8 +13,8 @@ A high-performance numerical analysis microservice combining **FastAPI**'s async
 
 - 🚀 **Asynchronous REST Microservice**: Built with FastAPI for high throughput and ultra-low latency.
 - 🧮 **Vectorized Computation**: Leverages NumPy array operations (`np.arange`, vector multiplication) instead of traditional Python loops for computational speed.
-- 📊 **Statistical Analysis Engine**: Exposes dynamic dynamic calculations for Mean, Median, Standard Deviation, Variance, Min/Max, and Total Sum.
-- 🔍 **Boolean Index Masking**: Filters data dynamically (e.g., dynamic dynamic even/odd splits) using NumPy array masking algorithms.
+- 📊 **Statistical Analysis Engine**: Exposes dynamic calculations for Mean, Median, Standard Deviation, Variance, Min/Max, and Total Sum.
+- 🔍 **Boolean Index Masking**: Filters data dynamically (e.g., dynamic even/odd splits) using NumPy array masking algorithms.
 - 🔒 **JSON Serialization Safety**: Handles raw NumPy C-types (`int64`, `float64`) via explicit native type-casting (`int()`, `float()`, `.tolist()`) for seamless REST JSON responses.
 - 📖 **Self-Documenting Spec**: Automated interactive Swagger UI (`/docs`) and ReDoc (`/redoc`).
 
@@ -112,5 +112,4 @@ Access interactive documentation at:
 
 ## 👤 Author
 
-**Pavan Kumar Majji** 
-
+**Pavan Kumar Majji**  
