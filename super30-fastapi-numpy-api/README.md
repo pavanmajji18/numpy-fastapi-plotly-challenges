@@ -1,30 +1,116 @@
-# Super30 FastAPI & NumPy Calculation API
+# ⚡ Super30 FastAPI & NumPy Numerical Analysis API
 
-A high-performance numerical analysis microservice built with **FastAPI** and **NumPy**. This API exposes RESTful `GET` endpoints to dynamically perform statistical evaluations, boolean masking, and vectorized matrix calculations on numeric data without hard-coded outputs.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688.svg)](https://fastapi.tiangolo.com/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.24%2B-013243.svg)](https://numpy.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
----
-
-## Author
-* **Student Name:** Pavan Kumar Majji
-
----
-
-## Project Objective
-The goal of this project is to integrate NumPy's vector processing capabilities into an asynchronous web API architecture using FastAPI. 
-
-Key technical highlights:
-* **Zero Hard-Coding:** All metrics are evaluated dynamically at runtime.
-* **Vectorized Computing:** Multiplication tables and array splits are handled directly through NumPy vectorized arrays (`np.arange`) rather than standard Python loops.
-* **Boolean Masking:** Conditional filtering (even/odd splits) leverages boolean index masks.
-* **Native JSON Serialization:** Explicit type-casting (`int()`, `float()`, `.tolist()`) ensures raw NumPy C-types (`int64`, `float64`) serialize cleanly into standard JSON payloads.
+A high-performance numerical analysis microservice combining **FastAPI**'s asynchronous web framework with **NumPy**'s vectorized C-accelerated array computing. This RESTful API exposes dynamic endpoints for statistical evaluations, array transformations, boolean masking, and dynamic mathematical calculations.
 
 ---
 
-## Project Structure
+## 📌 Features
+
+- 🚀 **Asynchronous REST Microservice**: Built with FastAPI for high throughput and ultra-low latency.
+- 🧮 **Vectorized Computation**: Leverages NumPy array operations (`np.arange`, vector multiplication) instead of traditional Python loops for computational speed.
+- 📊 **Statistical Analysis Engine**: Exposes dynamic dynamic calculations for Mean, Median, Standard Deviation, Variance, Min/Max, and Total Sum.
+- 🔍 **Boolean Index Masking**: Filters data dynamically (e.g., dynamic dynamic even/odd splits) using NumPy array masking algorithms.
+- 🔒 **JSON Serialization Safety**: Handles raw NumPy C-types (`int64`, `float64`) via explicit native type-casting (`int()`, `float()`, `.tolist()`) for seamless REST JSON responses.
+- 📖 **Self-Documenting Spec**: Automated interactive Swagger UI (`/docs`) and ReDoc (`/redoc`).
+
+---
+
+## 🛠️ Tech Stack
+
+- **Language:** Python 3.10+
+- **Framework:** FastAPI
+- **Numerical Library:** NumPy
+- **ASGI Server:** Uvicorn
+
+---
+
+## 📁 Project Structure
 
 ```text
 super30-fastapi-numpy-api/
-│
-├── main.py              # FastAPI application, routing, and NumPy analysis logic
-├── requirements.txt     # Application dependencies
-└── README.md            # Documentation and setup guide
+├── main.py              # FastAPI routes, NumPy calculation logic & serialization
+├── requirements.txt     # Python dependency specifications
+└── README.md            # Project technical documentation
+```
+
+---
+
+## 🚀 Quick Start & Setup
+
+### 1. Prerequisites
+- Python 3.10 or higher
+- `pip` package manager
+
+### 2. Clone Repository & Setup Virtual Environment
+```bash
+git clone <repository-url>
+cd super30-fastapi-numpy-api
+```
+
+**Windows (PowerShell):**
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run Application
+```bash
+uvicorn main:app --reload
+```
+Access the application at `http://127.0.0.1:8000`.
+
+---
+
+## 📖 API Reference
+
+Access interactive documentation at:
+- **Swagger UI:** [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs)
+- **ReDoc:** [`http://127.0.0.1:8000/redoc`](http://127.0.0.1:8000/redoc)
+
+### Available Endpoints
+
+| Method | Endpoint | Description | Sample Output |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/numbers` | Fetch raw underlying array | `{"numbers": [12, 15, ...]}` |
+| `GET` | `/mean` | Compute arithmetic mean | `{"mean": 48.25}` |
+| `GET` | `/median` | Compute median value | `{"median": 38.0}` |
+| `GET` | `/std` | Standard deviation | `{"standard_deviation": 31.42}` |
+| `GET` | `/variance` | Statistical variance | `{"variance": 987.52}` |
+| `GET` | `/maximum` | Dynamic maximum element | `{"maximum": 99}` |
+| `GET` | `/minimum` | Dynamic minimum element | `{"minimum": 12}` |
+| `GET` | `/sum` | Aggregate array sum | `{"sum": 579}` |
+| `GET` | `/even` | Filter even elements (Boolean Masking) | `{"even_numbers": [12, 42, ...]}` |
+| `GET` | `/odd` | Filter odd elements (Boolean Masking) | `{"odd_numbers": [15, 23, ...]}` |
+| `GET` | `/stats` | Complete statistical metrics payload | `{"mean": 48.25, ...}` |
+| `GET` | `/table/{number}` | Vectorized multiplication table calculation | `{"number": 7, "results": [...]}` |
+
+---
+
+## 💡 Key Engineering Considerations
+
+1. **Performance via Vectorization**: Replaced conventional iterative `for` loops with vectorized NumPy arrays (`np.arange`), shifting loop execution down to C-speed memory buffers.
+2. **Memory-efficient Boolean Indexing**: Utilized boolean index arrays (`data % 2 == 0`) for continuous memory filtering instead of standard Python list comprehensions.
+3. **JSON Serialization Guard**: Solved NumPy's native `TypeError: Object of type int64 is not JSON serializable` by cleanly mapping output scalars and arrays to native Python types prior to endpoint return.
+
+---
+
+## 👤 Author
+
+**Pavan Kumar Majji** 
+
