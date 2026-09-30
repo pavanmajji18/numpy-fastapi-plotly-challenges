@@ -1,111 +1,96 @@
 # Super30 Plotly Visualization Challenge
 
-Convert raw data into meaningful, interactive data visualizations using Plotly Express, Plotly Graph Objects, NumPy, and Pandas, with interactive API execution via FastAPI and Swagger UI.
+Convert raw data into meaningful, interactive data visualizations using **Plotly Express**, **Plotly Graph Objects**, **NumPy**, and **Pandas**, served seamlessly via **FastAPI** and **Swagger UI**.
 
 ---
 
-**Author Information**
+## 👤 Author Information
 
-* **Student Name:** Pavan Kumar Majji
-
-
-* **Project Name:** super30-plotly-task-2 / super30-plotly-visualization-Challenge
+* **Author:** Pavan Kumar Majji
+* **Project:** super30-plotly-visualization-Challenge
+* **LinkedIn:** [Pavan Kumar Majji](https://www.linkedin.com/in/pavan-kumar-majji-231303199/)
+* **Repository:** [numpy-fastapi-plotly-challenges](https://github.com/pavanmajji18/numpy-fastapi-plotly-challenges/tree/main/super30-plotly-visualization-Challenge)
 
 ---
 
-**Repository Structure**
+## 🚀 Key Features
+
+* **⚡ API-Driven Visualizations:** Exposes 12 dedicated interactive visualization endpoints powered by FastAPI.
+* **🌐 Interactive Swagger UI (`/docs`):** Test endpoints directly from the browser; executing an endpoint triggers Plotly's rendering engine (`fig.show()`) in a new browser tab.
+* **📊 Comprehensive Visual Suite:** Covers 2D/3D Scatter Plots, Box Plots, Histograms, Funnel Charts, Grouped Bar Charts, Line Graphs, and Multi-Metric Dashboards.
+* **🔧 Clean Modular Code:** Leverages Pandas DataFrames and NumPy array generators for robust data preparation.
+
+---
+
+## 📁 Repository Structure
 
 ```text
 super30-plotly-visualization-Challenge/
-│
-├── main.py
-├── requirements.txt
-└── README.md
-
+├── main.py          # FastAPI application serving 12 Plotly visualization endpoints
+├── requirements.txt # Project dependencies (fastapi, uvicorn, plotly, pandas, numpy)
+└── README.md        # Project documentation
 ```
 
 ---
 
-**Installation & Environment Setup**
+## 🛠️ Installation & Setup
 
-1. Clone or open the repository folder:
+1. **Clone or navigate to the repository directory:**
+   ```bash
+   cd super30-plotly-visualization-Challenge
+   ```
 
+2. **Create and activate a virtual environment (optional but recommended):**
+   ```bash
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
+   ```
 
-```bash
-cd super30-plotly-visualization-Challenge
-
-```
-
-
-2. Install the necessary dependencies:
-
-
-```bash
-pip install -r requirements.txt
-
-```
-
-
+3. **Install required dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ---
 
-**How to Run the Server**
+## 🚀 How to Run the Server
 
-Start the FastAPI application using the Uvicorn server:
+Start the FastAPI application using the Uvicorn ASGI server:
 
 ```bash
 uvicorn main:app --reload --port 8000
-
 ```
 
-Once the server is running, open the interactive Swagger UI in your browser:
+Once the server is running, access the interactive Swagger UI in your browser:
+👉 **Interactive API Documentation:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-* **Interactive API Documentation:** `[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)`
+> **How to execute:** From the Swagger UI interface, expand any endpoint, click **"Try it out"**, and press **"Execute"**. The endpoint triggers Plotly's interactive rendering engine and opens the visualization directly in a new browser tab.
 
-From the Swagger UI interface, click on any endpoint, click **"Try it out"**, and press **"Execute"**. The endpoint triggers Plotly's interactive rendering engine (`fig.show()`) and automatically opens the visualization in a new browser tab.
+---
+
+## 📡 Available API Endpoints
+
+| # | Chart Type | Endpoint Path | Description |
+|---|---|---|---|
+| **Doc** | Swagger UI | `/docs` | Interactive Swagger API testing console |
+| **1** | Bar Chart | `/monthly-sales-bar` | Monthly sales for 6 months (`Jan` to `Jun`) |
+| **2** | Line Chart | `/monthly-sales-line` | Trend view of monthly sales over time |
+| **3** | Pie Chart | `/department-distribution-pie` | Employee headcount breakdown by department |
+| **4** | Scatter Plot | `/study-marks-scatter` | Hours studied vs. exam scores correlation (15 students) |
+| **5** | Histogram | `/random-values-histogram` | Frequency distribution of 500 NumPy random values |
+| **6** | Box Plot | `/employee-salary-box` | Salary distribution, median, and IQR across 30 employees |
+| **7** | Grouped Bar Chart | `/product-sales-grouped-bar` | Multi-product sales comparison across 6 months |
+| **8** | Grouped Bar Chart | `/student-performance-bar` | Student performance across Python, Math, and Data Science |
+| **9** | 3D Scatter Plot | `/age-salary-scatter3d` | 3D multi-variable plot mapping Age, Experience, and Salary |
+| **10** | Funnel Chart | `/conversion-funnel` | User conversion stages and marketing attrition |
+| **11** | Line Plot | `/numpy-random-line` | Sequential mapping of 100 NumPy random values |
+| **12** | Subplot Dashboard | `/company-dashboard` | 2x2 multi-metric executive dashboard |
 
 ---
 
-**Available API Endpoints & Example URLs**
+## 📜 License
 
-| # | Chart Type | Endpoint Path | Full Example URL | Description |
-| --- | --- | --- | --- | --- |
-| **Doc** | Swagger UI | `/docs` | `[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)` | Interactive Swagger testing console |
-| **1** | Bar Chart | `/monthly-sales-bar` | `[http://127.0.0.1:8000/monthly-sales-bar](http://127.0.0.1:8000/monthly-sales-bar)`<br> | Monthly sales for 6 months (`Jan` to `Jun`)
-
- |
-| **2** | Line Chart | `/monthly-sales-line` | `[http://127.0.0.1:8000/monthly-sales-line](http://127.0.0.1:8000/monthly-sales-line)`<br> | Trend view of monthly sales over time
-
- |
-| **3** | Pie Chart | `/department-distribution-pie` | `[http://127.0.0.1:8000/department-distribution-pie](http://127.0.0.1:8000/department-distribution-pie)`<br> | Employee headcount breakdown by department
-
- |
-| **4** | Scatter Plot | `/study-marks-scatter` | `[http://127.0.0.1:8000/study-marks-scatter](http://127.0.0.1:8000/study-marks-scatter)`<br> | Correlation between hours studied and exam scores (15 students)
-
- |
-| **5** | Histogram | `/random-values-histogram` | `[http://127.0.0.1:8000/random-values-histogram](http://127.0.0.1:8000/random-values-histogram)`<br> | Frequency distribution of 500 NumPy-generated random values
-
- |
-| **6** | Box Plot | `/employee-salary-box` | `[http://127.0.0.1:8000/employee-salary-box](http://127.0.0.1:8000/employee-salary-box)`<br> | Salary distribution, median, and IQR across 30 employees
-
- |
-| **7** | Grouped Bar Chart | `/product-sales-grouped-bar` | `[http://127.0.0.1:8000/product-sales-grouped-bar](http://127.0.0.1:8000/product-sales-grouped-bar)`<br> | Multi-product comparison: Laptop, Mobile, and Tablet across 6 months
-
- |
-| **8** | Grouped Bar Chart | `/student-performance-bar` | `[http://127.0.0.1:8000/student-performance-bar](http://127.0.0.1:8000/student-performance-bar)`<br> | Comparative marks for 10 students across Python, Mathematics, and Data Science
-
- |
-| **9** | 3D Scatter Plot | `/age-salary-scatter3d` | `[http://127.0.0.1:8000/age-salary-scatter3d](http://127.0.0.1:8000/age-salary-scatter3d)`<br> | 3D multi-variable visualization for Age, Experience, and Salary
-
- |
-| **10** | Funnel Chart | `/conversion-funnel` | `[http://127.0.0.1:8000/conversion-funnel](http://127.0.0.1:8000/conversion-funnel)`<br> | User attrition across marketing conversion stages
-
- |
-| **11** | Line Plot | `/numpy-random-line` | `[http://127.0.0.1:8000/numpy-random-line](http://127.0.0.1:8000/numpy-random-line)` | Sequential plot mapping 100 NumPy random values
-
- |
-| **12** | Subplot Dashboard | `/company-dashboard` | `[http://127.0.0.1:8000/company-dashboard](http://127.0.0.1:8000/company-dashboard)`<br> | 2x2 multi-metric dashboard: Revenue, Expenses, Employees, Customers
-
- |
-
----
+This project is open-source and available under the [MIT License](LICENSE).
