@@ -52,7 +52,7 @@ super30-student-analytics-api/
 * **Computation Engine:** [NumPy](https://numpy.org/) (Multi-axis matrix operations, linear reductions, and boolean filtering)
 * **Data Transport:** [Pandas](https://pandas.pydata.org/) (Lightweight tabular mapping for data visualization pipelines)
 * **Visualization Layer:** [Plotly Express](https://plotly.com/python/) (D3.js-based interactive browser visualizations)
-* **Application Server:** [Uvicorn](https://www.google.com/search?q=https://www.uvicorn.org/) (High-performance ASGI server)
+* **Application Server:** [Uvicorn](https://www.uvicorn.org/) (High-performance ASGI server)
 
 ---
 
@@ -61,8 +61,8 @@ super30-student-analytics-api/
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/](https://github.com/)<your-username>/super30-student-analytics-api.git
-cd super30-student-analytics-api
+git clone https://github.com/pavanmajji18/numpy-fastapi-plotly-challenges.git
+cd numpy-fastapi-plotly-challenges/super30-student-analytics-api
 
 ```
 
@@ -96,8 +96,8 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 
 Once initialized, access:
 
-* **Interactive OpenAPI (Swagger):** [http://127.0.0.1:8000/docs](https://www.google.com/url?sa=E&source=gmail&q=http://127.0.0.1:8000/docs)
-* **ReDoc Documentation:** [http://127.0.0.1:8000/redoc](https://www.google.com/search?q=http://127.0.0.1:8000/redoc)
+* **Interactive OpenAPI (Swagger):** `http://127.0.0.1:8000/docs`
+* **ReDoc Documentation:** `http://127.0.0.1:8000/redoc`
 
 ---
 

@@ -184,7 +184,19 @@ def visualize_subject_averages():
         df,
         x="Subject",
         y="Average Marks",
+        color="Subject",
+        text="Average Marks",
         title="Average Marks Across Subjects",
+        color_discrete_sequence=px.colors.qualitative.Bold,
+        template="plotly_white",
+    )
+    fig.update_traces(texttemplate="%{text:.2f}", textposition="outside")
+    fig.update_layout(
+        title_x=0.5,
+        font=dict(family="Inter, system-ui, sans-serif", size=14),
+        yaxis=dict(range=[0, 100], title="Average Marks"),
+        xaxis=dict(title="Academic Discipline"),
+        showlegend=False,
     )
     return HTMLResponse(content=fig.to_html(full_html=True))
 
@@ -206,6 +218,18 @@ def visualize_top_students():
         df,
         x="Student",
         y="Overall Average",
-        title="Top 5 Students by Overall Average",
+        color="Overall Average",
+        text="Overall Average",
+        title="Top 5 Performers by Overall Average",
+        color_continuous_scale="Viridis",
+        template="plotly_white",
+    )
+    fig.update_traces(texttemplate="%{text:.2f}%", textposition="outside")
+    fig.update_layout(
+        title_x=0.5,
+        font=dict(family="Inter, system-ui, sans-serif", size=14),
+        yaxis=dict(range=[0, 105], title="Overall Average (%)"),
+        xaxis=dict(title="Student Name"),
+        coloraxis_showscale=False,
     )
     return HTMLResponse(content=fig.to_html(full_html=True))
